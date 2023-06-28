@@ -1,14 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate 
-
-#in flask we import SQLALCHEMY class to contain all fileds as attributes such as Column, Integer
-db = SQLAlchemy()
+from models import db
 
 app= Flask(__name__)
 
 #configuring sqlachemy in flask
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///first.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 
 #for setting up migration in our db
 migrate = Migrate(app, db)
