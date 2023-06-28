@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate 
 
 #in flask we import SQLALCHEMY class to contain all fileds as attributes such as Column, Integer
 db = SQLAlchemy()
@@ -8,6 +9,13 @@ app= Flask(__name__)
 
 #configuring sqlachemy in flask
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///first.db'
+
+#for setting up migration in our db
+migrate = Migrate(app, db)
+
+#initialize our application for use within our databse configuration
+db.init_app(app)
+
 
 
 @app.route('/')
