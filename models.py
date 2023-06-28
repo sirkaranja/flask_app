@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 
-db= SQLAlchemy()
+#in flask we import SQLALCHEMY class to contain all fileds as attributes such as Column, Integer
+db = SQLAlchemy()
 
 class Director(db.Model):
     __tablename__ = 'directors'
