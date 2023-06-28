@@ -1,4 +1,8 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+#in flask we import SQLALCHEMY class to contain all fileds as attributes such as Column, Integer
+db = SQLAlchemy()
 
 app= Flask(__name__)
 
