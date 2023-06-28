@@ -13,7 +13,7 @@ class Director(db.Model):
     def __repr__(self):
         return f'<Department Director {self.name}'
     
-class Department(db.models):
+class Department(db.Model):
     __tablename__='departments'
 
     id= db.Column(db.Integer, primary_key=True)
